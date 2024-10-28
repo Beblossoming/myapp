@@ -1,0 +1,86 @@
+<html>
+<head>
+  <style>
+    h1 {
+      color: #4a90e2;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    .input-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #357ab8;
+    }
+
+    .fashion-detail {
+      margin-top: 20px;
+      text-align: justify;
+      border: 1px solid #4a90e2;
+      padding: 15px;
+      background-color: white;
+      border-radius: 4px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Fashion Details</h1>
+
+<div class="input-container">
+  <input type="text" [(ngModel)]="fashionId" placeholder="Enter Fashion ID" />
+  <button (click)="getFashionDetail()">Fetch Details</button>
+</div>
+
+<div *ngIf="fashion" class="fashion-detail">
+  <h2>{{ fashion.fashion_subject }}</h2>
+  <p>{{ fashion.fashion_detail }}</p>
+  <img *ngIf="fashion.fashion_image" [src]="fashion.fashion_image" width="300" height="300" />
+</div>
+
+</body>
+</html>

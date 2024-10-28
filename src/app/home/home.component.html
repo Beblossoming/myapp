@@ -1,0 +1,100 @@
+<html>
+<head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    border: 1px solid #4a90e2;
+    background: #f0f0f0;
+    padding: 10px;
+}
+
+#container ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-between; /* Evenly space items */
+}
+
+#container ul li {
+    position: relative;
+    margin: 0; /* Remove right margin for even spacing */
+}
+
+#container ul li a {
+    display: block;
+    color: #4a90e2;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .5em 1em;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+#container ul li a:hover {
+    color: white;
+    background: #4a90e2;
+}
+
+#container li ul {
+    position: absolute;
+    display: none;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+#container li:hover ul {
+    display: block;
+}
+
+#container ul li ul li {
+    width: 150px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#container ul li ul li:last-child {
+    border-bottom: none;
+}
+
+#container ul li ul li a {
+    color: #333;
+    padding: .5em 1em;
+}
+
+#container ul li ul li a:hover {
+    background: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+    #container ul {
+        flex-direction: column;
+    }
+
+    #container ul li {
+        margin-bottom: 10px;
+    }
+}
+</style>
+</head>
+<body>
+<div id="container">  
+    <ul>
+        <li><a>HOME</a></li>
+        <li><a routerLink="fashion">FASHION</a></li>
+        <li><a routerLink="fashiondetail/:id">FASHION DETAILS</a></li>
+        <li><a routerLink="fashionpost">NEW FASHION</a></li>
+    </ul>
+</div>
+</body>
+</html>

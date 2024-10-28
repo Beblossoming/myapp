@@ -1,0 +1,24 @@
+<div class="container">
+    <h2 class="title">Thêm Mới Thời Trang</h2>
+    <p class="error-message">{{ errMessage }}</p>
+    <form (ngSubmit)="postFashion()" class="fashion-form">
+      <div class="form-group">
+        <label for="style">Fashion Style:</label>
+        <input type="text" class="form-control" id="style" placeholder="Nhập Style" [(ngModel)]="fashion.style" name="style" required />
+      </div>
+      <div class="form-group">
+        <label for="fashion_subject">Fashion Subject:</label>
+        <input type="text" class="form-control" id="fashion_subject" placeholder="Nhập Subject" [(ngModel)]="fashion.fashion_subject" name="fashion_subject" required />
+      </div>
+      <div class="form-group">
+        <label for="fashion_detail">Fashion Detail:</label>
+        <input type="text" class="form-control" id="fashion_detail" placeholder="Nhập Detail" [(ngModel)]="fashion.fashion_detail" name="fashion_detail" required />
+      </div>
+      <div class="form-group">
+        <label for="fashion_image">Fashion Image:</label>
+        <input type="file" class="form-control-file" id="fashion_image" (change)="onFileSelected($event)" required />
+      </div>
+      <button type="submit" class="btn btn-submit">Submit</button>
+    </form>
+  </div>
+  
