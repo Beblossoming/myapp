@@ -7,7 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FashiondetailComponent } from './fashiondetail/fashiondetail.component';
 import { FormsModule } from '@angular/forms';
 import { FashionpostComponent } from './fashionpost/fashionpost.component';
-import { HomeComponent } from './home/home.component'; // Import FormsModule
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component'; // Import FormsModule
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +16,7 @@ import { HomeComponent } from './home/home.component'; // Import FormsModule
     FashiondetailComponent,
     FashionpostComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
